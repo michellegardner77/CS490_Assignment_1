@@ -1,5 +1,7 @@
 package sample.controllers;
 
+import sample.Drawable;
+
 import java.awt.*;
 
 /**
@@ -8,7 +10,7 @@ import java.awt.*;
 public class DrawingApplication{
 
         // keeps track of a collection of drawables
-
+        List<Drawable> drawableList = new List();
 
         public void paint(Graphics g) {
 
