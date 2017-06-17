@@ -12,6 +12,8 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Application Started");
-        drawingApplicationJFrame.setVisible(true);
+        drawingApplicationJFrame.setVisible(true);//        drawingApplicationJFrame.repaint();
+
+
     }
 }

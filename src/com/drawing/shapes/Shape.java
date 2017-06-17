@@ -10,7 +10,9 @@ import java.awt.*;
  */
 public abstract class Shape implements Drawable {
 
+    // x location
     protected double x;
+    // y location
     protected double y;
 
     public void draw(Graphics g) {
