@@ -44,7 +44,7 @@ public class DrawingApplication extends JFrame {
 
         // TODO any other setup actions. Might not be any.
     }
-    
+
     @Override
     public void paint(Graphics g) {
 
