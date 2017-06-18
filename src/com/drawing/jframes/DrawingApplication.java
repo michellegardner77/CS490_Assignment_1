@@ -2,6 +2,7 @@ package com.drawing.jframes;
 
 import com.drawing.shapes.Ellipse;
 import com.drawing.shapes.Rectangle;
+import com.drawing.shapes.RoundedRectangle;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +16,16 @@ import java.awt.*;
 public class DrawingApplication extends JFrame {
 
     // JFrame Properties (ex. Labels, Panels, etc.)
+
+    com.drawing.shapes.Shape[] shapeArray = {
+        new Rectangle(10, 35, 105, 105),
+        new Rectangle(30, 95, 200, 150),
+        new Ellipse(50, 240, 300),
+        new Ellipse(80, 30, 160),
+        new RoundedRectangle(60, 50, 80, 60, 55, 19)
+
+    };
+
 
     public DrawingApplication(String title) {
         // Set the JFrames (Frames) title
@@ -33,30 +44,13 @@ public class DrawingApplication extends JFrame {
 
         // TODO any other setup actions. Might not be any.
     }
-
-    // keeps track of a collection of drawables
-//        List drawableList = new List();
-
+    
     @Override
     public void paint(Graphics g) {
-        System.out.println("PAINT CALLED");
 
-        // Created custom rectangle object passing it x,y,height,and width.
-        // calling custom implementation of draw which wil draw the rectangle on the JFrame.
-        // must pass the draw method the local Graphics variable
-        com.drawing.shapes.Rectangle rec = new Rectangle(10, 35, 105, 105);
-        rec.draw(g);
-
-
-        // Created custom ellipse object passing it center point, height,and width.
-        // calling custom implementation of draw which will draw the ellipse (oval) on the JFrame.
-        // must pass the draw method the local Graphics variable
-        com.drawing.shapes.Ellipse ellipse = new Ellipse(50, 40, 100);
-        ellipse.draw(g);
-
-        // TODO: deal with multiple shapes stacking. Possibly put each shape in a JPanel and disallow stacking so they are placed next to each other based on the JFrame layout.
-
-        // TODO: create collection of custom Drawables and then print them out instead of hardcoding them above. (do this using a loop over the collection)
+        for(int i = 0; i < shapeArray.length; i++){
+            shapeArray[i].draw(g);
+        }
     }
 
 }
